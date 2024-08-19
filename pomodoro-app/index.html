@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Pomodoro Timer</title>
+</head>
+<body>
+    <h1>Pomodoro Timer</h1>
+    <div id="timer"></div>
+    <script src="https://albert-gonzalez.github.io/easytimer.js/dist/easytimer.min.js"></script>
+    <script>
+        var timer = new Timer();
+        timer.start({ countdown: true, startValues: { minutes: 25 } });
+        timer.addEventListener('secondsUpdated', function (e) {
+            document.querySelector('#timer').innerHTML = timer.getTimeValues().toString();
+        });
+        timer.addEventListener('targetAchieved', function (e) {
+            alert('Pomodoro complete! Time for a break.');
+        });
+    </script>
+</body>
+</html>
+ 
